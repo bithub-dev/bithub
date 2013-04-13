@@ -1,0 +1,6 @@
+- unless f.object.errors.empty?
+  .alert.alert-error
+    %strong Please try again after fixing the following errors:
+    %ul
+      - f.object.errors.full_messages.each do |msg|
+        %li= msg

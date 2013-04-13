@@ -11,10 +11,10 @@ class SessionsController < ApplicationController
       flash.now.alert = "Email or password was invalid."
     end
   end
-
+  
   def destroy
     logout
-    redirect_to(:root, :notice => 'Logged out!')
+    redirect_to root_url, :notice => "You have been signed out."
   end
 end
 
