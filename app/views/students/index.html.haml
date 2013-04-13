@@ -1,14 +1,13 @@
 %h1.span12.title Students
 
 - @students.each do |student|
-  .span9.topMarginTwenty
-
-    .span3
-      =image_tag "#{student.gravitar}", :height => "100px", :class => "img-polaroid"
+  .row
+    .span4
+      =gravatar_image_tag student.email, :height => "100px", :class => "img-polaroid"
       %h2.inline #{student.full_name}
       -if current_user.full_name == student.full_name
         =link_to "Edit", edit_user_path(current_user)
-    .span3
+    .span6
       = student.bio
 
     .span2
