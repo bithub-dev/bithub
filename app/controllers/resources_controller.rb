@@ -1,6 +1,9 @@
 class ResourcesController < ApplicationController
   def index
-    @resource = Resource.build(:user => current_user)
+    if logged_in?
+      @resource = current_user.resources.build
+    end
+
     @resources = Resource.all
   end
 end

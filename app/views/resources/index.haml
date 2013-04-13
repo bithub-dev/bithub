@@ -1,1 +1,18 @@
 %h2 Resources
+
+- if logged_in?
+  .well.well-small
+    - form_defaults = { :input_html => { :class => "input-xlarge"} }
+    - form_html = { :class => "form-horizontal" }
+    
+    -# See http://twitter.github.io/bootstrap/base-css.html#forms - specifically the section on Horizontal Forms.
+    -# simple_form_for does a lot of Bootstrap magic here, including the control_group stuff.
+    
+    = simple_form_for @resource, { :html => form_html, :defaults => form_defaults } do |f|
+      %fieldset
+        %legend Add a new resource
+        = f.input :title, :placeholder => "CSS for Zombies"
+        = f.input :url, :placeholder => "http://example.org/abc/123"
+        = f.input :description, :placeholder => "An awesome CSS resource!", :hint => "Tell us how it helped!"
+        .controls
+          = f.button :submit, :class => "btn btn-primary"
