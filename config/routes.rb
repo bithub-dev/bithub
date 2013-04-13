@@ -9,7 +9,6 @@ Bithub::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   get "secret" => "home#secret", :as => "secret"
   root :to => "home#index"
-  get "sessions/create" => "home#index"
   resources :users, except: ['index']
-  resource :session, only: ['create', 'destroy']
+  resource :sessions, only: ['create', 'destroy']
 end
