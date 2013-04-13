@@ -28,6 +28,13 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     assert find('.alert').has_content?("Welcome")
   end
 
+  test "invalid sign up shows errors" do
+    # Visit new user page
+    visit new_user_path
+    click_button 'Create account'
+    assert find('.alert-error').has_content?('try again')
+  end
+
   def assert_nav_shows_signed_in
     assert find('.navbar').has_link?('Logout')
     assert find('.navbar').has_no_link?('Sign Up')
