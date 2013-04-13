@@ -11,8 +11,8 @@
         = link_to 'Resources', resources_path
     .pull-right
       - if logged_in?
-        =link_to 'Logout', :logout, class: 'btn modNav'
-        .navbar-text.modNav
+        =link_to 'Logout', :logout, class: 'btn pull-right'
+        .navbar-text.pull-right
           = "Signed in as " + current_user.full_name
 
       - else
