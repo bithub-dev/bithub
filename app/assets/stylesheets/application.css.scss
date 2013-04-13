@@ -1,0 +1,20 @@
+/*
+ * Following instructions from https://github.com/maxim/bootswatch-rails/blob/master/README.md#usage
+ * 
+ * This is to get the bootswatch-rails gem working as intended.
+ *
+ */
+
+@import "bootswatch/united/variables";
+
+$navbarBackground: $black !default;
+
+
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 60px; }
+
+@import "bootstrap-responsive";
+@import "bootswatch/united/bootswatch";
+@import "base";
