@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
@@ -9,6 +10,11 @@ class SessionsController < ApplicationController
     else
       flash.now.alert = "Email or password was invalid."
     end
+  end
+
+  def destroy
+    logout
+    redirect_to(:root, :notice => 'Logged out!')
   end
 end
 
