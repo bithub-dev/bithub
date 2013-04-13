@@ -5,4 +5,6 @@ Bithub::Application.routes.draw do
   resources :resources
   resources :students, only: ['index']
   resources :users, except: ['index']
+
+  resource :session, only: ['create', 'destroy']
 end
