@@ -1,4 +1,7 @@
-%h1.well Resources 
+%h1.well 
+  Resources 
+  .pull-right
+    = link_to 'Add resource', '#', class: "btn btn-info"
 
 %ul.resources
   - @resources.each do |resource|
@@ -28,5 +31,5 @@
         = f.input :url, :label => "URL", :placeholder => "http://example.org/abc/123"
         = f.input :description, :placeholder => "An awesome CSS resource!", :hint => "Tell us how it helped!"
         .controls
-          = f.button :submit, :class => "btn btn-primary"
+          = f.button :submit, :class => "btn btn-success"
 
