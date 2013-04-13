@@ -1,4 +1,18 @@
-%h2 Students
-%h2 What?
-= Time.now
-= @time
+- @students.each do |student|
+  .span9.img-polaroid.topMarginTwenty
+
+    .span3
+      =image_tag "#{student.gravitar}", :height => "100px", :class => "img-polaroid"
+      %h2.inline #{student.full_name}
+
+    .span3
+      = student.bio
+
+    .span2
+      %a{:href => "mailto:#{student.email}"}
+        =image_tag "email.png", :width => "32px", :class => "img-polaroid"
+      %a{:href => "#{student.twitter_link}"}
+        =image_tag "twitter.png", :width => "32px", :class => "img-polaroid"
+      %a{:href => "#{student.github_link}"}
+        =image_tag "github.png", :class => "img-polaroid"
+      %a{:href => "#{student.blog_link}"}
