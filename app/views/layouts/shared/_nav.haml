@@ -9,3 +9,8 @@
         = link_to 'Tips & Tricks', tips_path
       %li{class: ('active' if params[:controller] == 'resources')}
         = link_to 'Resources', resources_path
+    .pull-right
+      - if logged_in?
+        =link_to 'Logout', :user_sessions, :method => :delete, class: 'btn'
+      - else
+        =link_to 'Sign Up', [:new, :user], class: 'btn btn-primary'
