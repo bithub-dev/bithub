@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_presence_of :full_name
-  # attr_accessible :title, :body
+
+  has_many :resources
 end
