@@ -13,7 +13,6 @@ Rails.application.config.sorcery.configure do |config|
   #
   # config.not_authenticated_action =
 
-  user.username_attribute_name = :email
 
   # When a non logged in user tries to enter a page that requires login, save
   # the URL he wanted to reach, and send him there after login, using 'redirect_back_or_to'.
