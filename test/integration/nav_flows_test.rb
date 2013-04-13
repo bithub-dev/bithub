@@ -24,5 +24,4 @@ class NavFlowsTest < ActionDispatch::IntegrationTest
     find('.navbar li.active').has_content?(link_text)
   end
 
-
 end
