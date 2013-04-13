@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
-  validates_present_of :full_name
+  validates_presence_of :full_name
   # attr_accessible :title, :body
 end
