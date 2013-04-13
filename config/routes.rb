@@ -4,5 +4,5 @@ Bithub::Application.routes.draw do
   resources :tips
   resources :resources
   resources :students, only: ['index']
-
+  resources :users, except: ['index']
 end

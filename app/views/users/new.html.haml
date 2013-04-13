@@ -1,6 +1,6 @@
 %h1 Sign Up
 = form_for @user do |f|
-  if @user.errors.any?
+  =if @user.errors.any?
     .error_messages
       %h2
         There were problems, my friend.
@@ -17,33 +17,19 @@
     =f.label :bio
     =f.text_area :bio
   .field
-
-
-<h1>Sign Up</h1>
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
-<% end %>
-
+    =f.label :github_link
+    =f.text_field :twitter_link
+  .field
+    =f.label :blog_link
+    =f.text_field :blog_link
+  .field
+    =f.label :gravitar
+    =f.text_field :gravitar # to set up after MVP
+  .field
+    =f.label :password
+    =f.password_field :password
+  .field
+    =f.label :password_confirmation
+    =f.password_field :password_confirmation
+  .actions
+    =f.submit
