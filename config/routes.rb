@@ -2,7 +2,7 @@ Bithub::Application.routes.draw do
   root :to => 'home#home'
 
   resources :tips
-  resources :resources
+  resources :resources, only: ['index', 'create']
   resources :students, only: ['index']
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"

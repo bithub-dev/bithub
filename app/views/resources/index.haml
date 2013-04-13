@@ -17,12 +17,13 @@
   .well.well-small
     -# See http://twitter.github.io/bootstrap/base-css.html#forms - specifically the section on Horizontal Forms.
     -# simple_form_for does a lot of Bootstrap magic here, including the control_group stuff.
-    
     - form_defaults = { :input_html => { :class => "input-xlarge"} }
     - form_html = { :class => "form-horizontal" }
+
     = simple_form_for @resource, { :html => form_html, :defaults => form_defaults } do |f|
       %fieldset
         %legend Add a new resource
+        = render 'shared/form_errors', f: f
         = f.input :title,  :placeholder => "CSS for Zombies"
         = f.input :url, :label => "URL", :placeholder => "http://example.org/abc/123"
         = f.input :description, :placeholder => "An awesome CSS resource!", :hint => "Tell us how it helped!"
