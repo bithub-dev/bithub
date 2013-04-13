@@ -1,12 +1,9 @@
 = form_tag sessions_path, :method => :post do
   .field
     =label_tag :email
-    =text_field_tag :username
+    =text_field_tag :email
   .field
     =label_tag :password
     =password_field_tag :password
-  .field
-    = check_box_tag :remeber_me, 1, params[:remember_me]
-    = label_tag :remember_me
   .actions
     =submit_tag "Login"
