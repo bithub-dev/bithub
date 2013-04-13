@@ -3,6 +3,9 @@
     = link_to 'BitHub', root_path, class: 'brand'
     %ul.nav
       %li.divider-vertical
-      %li= link_to 'Students', '#'
-      %li= link_to 'Tips & Tricks', '#'
-      %li= link_to 'Resources', '#'
+      %li{class: ('active' if params[:controller] == 'students')}
+        = link_to 'Students', students_path
+      %li{class: ('active' if params[:controller] == 'tips')}
+        = link_to 'Tips & Tricks', tips_path
+      %li{class: ('active' if params[:controller] == 'resources')}
+        = link_to 'Resources', resources_path
