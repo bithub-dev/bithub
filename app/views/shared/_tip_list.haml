@@ -1,0 +1,11 @@
+- tips.each do |tip|
+  %li
+    %h4
+      =link_to tip.title, tip
+    %p
+      = tip.description
+      %small.muted
+        %em
+          = friendly_date tip.created_at
+          by 
+          = link_to tip.user.full_name, tip.user

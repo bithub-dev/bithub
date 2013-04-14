@@ -27,8 +27,20 @@
   .m { font-size: 1.6em; }
   .l { font-size: 2.4em; }
   line-height: 1.5em;
+
+  background-color: #f5f5f5;
+  border-radius: 25px;
+  padding: 30px;
+
+  min-height: 100px;
+
+  margin: auto;
 }
 
 .tag_cloud a {
   padding: 10px;
+}
+
+.black {
+  color: black;
 }
