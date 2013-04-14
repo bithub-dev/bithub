@@ -75,5 +75,60 @@ Resource.attr_accessible :user, :created_at
   )
 
 
+Tip.create(
+  :title => "Burger Bratz",
+  :url => "http://burgerbrats.ca/",
+  :address => "254 Adelaide St W, Toronto, ON",
+  :user => shane,
+  :tag_list => "food, nearby, burgers",
+  :description => "Legendary burgers."
+)
+
+Tip.create(
+  :title => "Burrito Boyz",
+  :url => "http://www.burritoboyz.ca/",
+  :address => "254 Adelaide St W, Toronto, ON",
+  :user => jesse,
+  :tag_list => "food, nearby, burgers",
+  :description => "Legendary burgers."
+)
+
+Tip.create(
+  :title => "Burger Bratz",
+  :url => "http://www.burritoboyz.ca/",
+  :address => "218 Adelaide St W, Toronto, ON",
+  :user => shane,
+  :tag_list => "food, nearby, burritos"
+  :description => "The other 'BB'. Shane says it's 'okay'."
+)
+Tip.create(
+  :title => "Banh Mi Boyz",
+  :url => "http://www.banhmiboys.com/",
+  :address => "392 Queen St W, Toronto, ON",
+  :user => shane,
+  :tag_list => "food, nearby, banh mi"
+  :description => "Vietnamese sandwiches."
+)
+Tip.create(
+  :title => "git commit --amend",
+  :user => jesse,
+  :tag_list => "git"
+  :description => "If you make a mistake in your commit message, you can use `git commit --amend` to change the message."
+)
+Tip.create(
+  :title => "render 'form' partial",
+  :user => jesse,
+  :tag_list => "rails forms"
+  :description => "If you have a partial called 'rabbits/form', Rails will implicitly pass the current form."
+)
+Tip.create(
+  :title => "git commit --amend",
+  :user => jesse,
+  :tag_list => "git"
+  :description => "If you make a mistake in your commit message, you can use `git commit --amend` to change the message."
+)
+
+
+
 end
 

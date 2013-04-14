@@ -1,5 +1,16 @@
+%h2= "Showing tip '#{@tip.title}'"
+%p= @tip.description
 
-= @tip.title
-= @tip.description
-= @tip.url
-= gmaps("map_options" => {},"markers" => { "data" => @json })
+- if @tip.url
+  %p 
+    %strong URL:
+    = link_to @tip.url, @tip.url
+
+- if @tip.address
+  %p 
+    %strong Address:
+    = @tip.address
+
+- if @tip.gmaps
+  %h3= "Map for '#{@tip.title}'"
+  = gmaps("map_options" => {},"markers" => { "data" => @json })
