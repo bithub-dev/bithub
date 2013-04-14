@@ -4,16 +4,15 @@
 
 - @students.each do |student|
   .row
-    .span1
-      =gravatar_image_tag student.email, :height => "100px", :class => "img-polaroid"
+    .span9
+      =gravatar_image_tag student.email, :height => "100px", :class => "img-polaroid pull-left"
 
-    .span2
       %h2.inline #{student.full_name}
+
       -if current_user && current_user.email == student.email
         =link_to "Edit", edit_user_path(current_user)
-
-    .span6
-      = student.bio
+        
+      %p= student.bio
 
     .span3
       %a{:href => "mailto:#{student.email}"}

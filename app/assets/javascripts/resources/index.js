@@ -1,5 +1,5 @@
 $(function() {
-  $form = $('.new_product_form');
+  $form = $('.new_resource_form');
   $btnNew = $('.btn-add-resource');
   $formAlert = $('form .alert');
 

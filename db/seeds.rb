@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+Resource.destroy_all
+
 jesse = User.create(
   :full_name => "Jesse Buchanan",
   :email => "jbinto@jbinto.ca",
@@ -32,18 +35,39 @@ shane = User.create(
 # Other strategies are listed here:
 # http://stackoverflow.com/questions/10669556/bypass-attr-accessible-in-seeds-rb
 
-r = Resource.new(
-  :title => "A practical example of closures in JavaScript",
-  :url => "https://gist.github.com/jbinto/5301893",
-  :description => "Small code sample to demonstrate how closures are useful.",
-)
-r.user = jesse
-r.save
+Resource.attr_accessible :user, :created_at
 
-r = Resource.new(
-  :title => "Bootstrap themes",
-  :url => "http://bootswatch.com/",
-  :description => "A collection of Bootstrap themes. Try the bootswatch-rails gem too!",
-)
-r.user = jesse
-r.save
+
+1.upto(5) do |day|
+
+  Resource.create(
+    :title => "A practical example of closures in JavaScript",
+    :url => "https://gist.github.com/jbinto/5301893",
+    :description => "Small code sample to demonstrate how closures are useful.",
+    :user => jesse,
+    :created_at => DateTime.new(2013, 4, day)
+  )
+  Resource.create(
+    :title => "Bootstrap themes",
+    :url => "http://bootswatch.com/",
+    :description => "A collection of Bootstrap themes. Try the bootswatch-rails gem too!",
+    :user => shane,
+    :created_at => DateTime.new(2013, 4, day)
+  )
+  Resource.create(
+    :title => "Font Awesome",
+    :url => "http://fortawesome.github.io/Font-Awesome/",
+    :description => "A web font filled with useful icons, better than the Glyphicons provided with Bootstrap. Try the font-awesome rails gem!",
+    :user => jesse,
+    :created_at => DateTime.new(2013, 4, day)
+  )
+
+  Resource.create(
+    :title => "simple_form",
+    :url => "https://github.com/plataformatec/simple_form",
+    :description => "A gem that improves 'form_for'. It plays nicely with Bootstrap.",
+    :user => shane,
+    :created_at => DateTime.new(2013, 4, day)
+  )
+end
+

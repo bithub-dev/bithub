@@ -8,30 +8,20 @@
         Add resource
 
 - if logged_in?
-  .well.well-small.new_product_form
-    -# See http://twitter.github.io/bootstrap/base-css.html#forms - specifically the section on Horizontal Forms.
-    -# simple_form_for does a lot of Bootstrap magic here, including the control_group stuff.
-    - form_defaults = { :input_html => { :class => "input-xlarge"} }
-    - form_html = { :class => "form-horizontal" }
+  .well.well-small.new_resource_form
+    = render 'fields', resource: @resource, legend: "Add a new resource"
 
-    = simple_form_for @resource, { :html => form_html, :defaults => form_defaults } do |f|
-      %fieldset
-        %legend Add a new resource
-        = render 'shared/form_errors', f: f
-        = f.input :title,  :placeholder => "CSS for Zombies"
-        = f.input :url, :label => "URL", :placeholder => "http://example.org/abc/123"
-        = f.input :description, :placeholder => "An awesome CSS resource!", :hint => "Tell us how it helped!"
-        .controls
-          = f.button :submit, :class => "btn btn-success"
-
-%ul.resources
+.resources
   - @resources.each do |resource|
-    %li
-      %h3= link_to resource.title, resource.url
-      %p= resource.description
-      .row
-        .span6
-          %em= "#{resource.created_at}"
-        .span6
-          %em= "(posted by #{resource.user.full_name})"
+    .resource
+      .span8
+        %h3
+          = link_to resource.title, resource.url
+          - if current_user && current_user == resource.user
+            = link_to 'Edit', [:edit, resource], class: 'btn btn-small pull-right'
+        %p= resource.description
+        %em= "Posted #{friendly_date(resource.created_at)} by "
+        = link_to resource.user.full_name, resource.user, class: 'text-info'
+
+
 
