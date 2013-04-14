@@ -1,23 +1,11 @@
 %h1.well 
   Resources 
-  .pull-right
-    = link_to 'Add resource', '#', class: "btn btn-info"
-
-%ul.resources
-  - @resources.each do |resource|
-    %li
-      %h3= link_to resource.title, resource.url
-      %p= resource.description
-      .row
-        .span6
-          %em= "#{resource.created_at}"
-        .span6
-          %em= "(posted by #{resource.user.full_name})"
-
-
+  - if logged_in?
+    .pull-right
+      = link_to 'Add resource', '#', class: "btn btn-info btn-add-resource"
 
 - if logged_in?
-  .well.well-small
+  .well.well-small.new_product_form
     -# See http://twitter.github.io/bootstrap/base-css.html#forms - specifically the section on Horizontal Forms.
     -# simple_form_for does a lot of Bootstrap magic here, including the control_group stuff.
     - form_defaults = { :input_html => { :class => "input-xlarge"} }
@@ -32,4 +20,15 @@
         = f.input :description, :placeholder => "An awesome CSS resource!", :hint => "Tell us how it helped!"
         .controls
           = f.button :submit, :class => "btn btn-success"
+
+%ul.resources
+  - @resources.each do |resource|
+    %li
+      %h3= link_to resource.title, resource.url
+      %p= resource.description
+      .row
+        .span6
+          %em= "#{resource.created_at}"
+        .span6
+          %em= "(posted by #{resource.user.full_name})"
 
