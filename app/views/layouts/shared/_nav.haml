@@ -3,12 +3,20 @@
     = link_to 'BitHub', root_path, class: 'brand'
     %ul.nav
       %li.divider-vertical
-      %li{class: ('active' if params[:controller] == 'students')}
-        = link_to 'Students', students_path
+      %li{class: ('active' if params[:controller] == 'students')}        
+        = link_to students_path do 
+          %i.icon-user.icon-white 
+          Students
       %li{class: ('active' if params[:controller] == 'tips')}
-        = link_to 'Tips & Tricks', tips_path
+        /= link_to 'Tips & Tricks', tips_path
+        = link_to tips_path do 
+          %i.icon-info-sign.icon-white
+          Tips & Tricks
       %li{class: ('active' if params[:controller] == 'resources')}
-        = link_to 'Resources', resources_path
+        /= link_to 'Resources', resources_path
+        = link_to resources_path do 
+          %i.icon-hand-up.icon-white
+          Resources
     .pull-right
       - if logged_in?
         =link_to 'Logout', :logout, class: 'btn pull-right'
