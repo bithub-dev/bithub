@@ -1,11 +1,15 @@
-%h1.well 
-  %i.icon-lightbulb
-  Tips & Tricks
-  - if logged_in?
-    .pull-right
-      = link_to '#', class: "btn btn-info btn-add-item" do
-        %i.icon-plus-sign
-        Add tip
+.well
+  %h1
+    %i.icon-lightbulb
+    Tips & Tricks
+    - if logged_in?
+      .pull-right
+        = link_to '#', class: "btn btn-info btn-add-item" do
+          %i.icon-plus-sign
+          Add resource
+  %h3.muted 
+    Want to share something you've learned? Whether it's a handy git command, or the best place to eat around 20 Duncan, this is the place.
+
 
 - if logged_in?
   .well.well-small.new_form
@@ -16,7 +20,7 @@
     .tip
       .span8
         %h3
-          = link_to tip.title, tip.url
+          = link_to tip.title, tip
           - if current_user && current_user == tip.user
             = link_to 'Edit', [:edit, tip], class: 'btn btn-small pull-right'
         %p= tip.address
