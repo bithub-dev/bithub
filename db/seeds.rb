@@ -29,6 +29,36 @@ shane = User.create(
   :password => "abc123"
 )
 
+troy = User.create(
+    :full_name => "Troy Morning",
+    :email => "troy@rocketmail.com",
+    :github_link => "https://github.com/troy",
+    :twitter_link => "https://github.com/troy",
+    :blog_link => "http://milkandcookies.com/",
+    :bio => "I run a morning show with my friend Abed",
+    :password => "abc123"
+)
+
+abed = User.create(
+    :full_name => "Abed Farscape",
+    :email => "president@gmail.com",
+    :github_link => "https://github.com/abaxial",
+    :twitter_link => "https://github.com/stultiloquent",
+    :blog_link => "http://intheinterestofliving.com/",
+    :bio => "I run a morning show with my friend Troy.",
+    :password => "abc123"
+)
+
+monty = User.create(
+    :full_name => "Monty Python",
+    :email => "montypython@gmail.com",
+    :github_link => "https://github.com/abaxial",
+    :twitter_link => "https://github.com/stultiloquent",
+    :blog_link => "http://nothingmore.com/",
+    :bio => "Always look on the bright side of life...",
+    :password => "abc123"
+)
+
 # Note: Originally I had Resource.create here, but that throws a MassAssignmentError.
 # Rather than blindly adding :user (which would be *bad*), we'll do it the long way here.
 
@@ -73,7 +103,6 @@ Resource.attr_accessible :user, :created_at
     :created_at => DateTime.new(2013, 4, day),
     :tag_list => "rails, forms"
   )
-
 
 end
 
