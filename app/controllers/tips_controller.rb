@@ -7,7 +7,6 @@ class TipsController < ApplicationController
     if logged_in?
       @tip = current_user.tips.build
     end
-
   end
 
   def create
@@ -34,6 +33,11 @@ class TipsController < ApplicationController
 
   def load_tips
     @tips = Tip.order('created_at DESC')
+  end
+
+  def show
+    @tip = current_user.tips.find(params[:id])
+    @json = @tip.to_gmaps4rails
   end
 
 end
