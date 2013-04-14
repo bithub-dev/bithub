@@ -45,21 +45,24 @@ Resource.attr_accessible :user, :created_at
     :url => "https://gist.github.com/jbinto/5301893",
     :description => "Small code sample to demonstrate how closures are useful.",
     :user => jesse,
-    :created_at => DateTime.new(2013, 4, day)
+    :created_at => DateTime.new(2013, 4, day),
+    :tag_list => "javascript, closures"
   )
   Resource.create(
     :title => "Bootstrap themes",
     :url => "http://bootswatch.com/",
     :description => "A collection of Bootstrap themes. Try the bootswatch-rails gem too!",
     :user => shane,
-    :created_at => DateTime.new(2013, 4, day)
+    :created_at => DateTime.new(2013, 4, day),
+    :tag_list => "css, bootstrap"
   )
   Resource.create(
     :title => "Font Awesome",
     :url => "http://fortawesome.github.io/Font-Awesome/",
     :description => "A web font filled with useful icons, better than the Glyphicons provided with Bootstrap. Try the font-awesome rails gem!",
     :user => jesse,
-    :created_at => DateTime.new(2013, 4, day)
+    :created_at => DateTime.new(2013, 4, day),
+    :tag_list => "css, fonts, icons"
   )
 
   Resource.create(
@@ -67,7 +70,10 @@ Resource.attr_accessible :user, :created_at
     :url => "https://github.com/plataformatec/simple_form",
     :description => "A gem that improves 'form_for'. It plays nicely with Bootstrap.",
     :user => shane,
-    :created_at => DateTime.new(2013, 4, day)
+    :created_at => DateTime.new(2013, 4, day),
+    :tag_list => "rails, forms"
   )
+
+
 end
 

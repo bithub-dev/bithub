@@ -1,0 +1,10 @@
+%h2.well= "Items tagged '#{@tag.name}'"
+
+.row
+  .span6
+    %h3 Resources
+    %ul
+    = render 'shared/resource_list', resources: @resources
+
+  .span6
+    %h3 Tips & Tricks
