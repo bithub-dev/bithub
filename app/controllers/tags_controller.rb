@@ -6,5 +6,6 @@ class TagsController < ApplicationController
     end
 
     @resources = Resource.tagged_with(@tag.name)
+    @tips = Tip.tagged_with(@tag.name)
   end
 end

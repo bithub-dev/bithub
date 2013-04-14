@@ -6,7 +6,7 @@
 
 .row
   .span6
-    %h3 Resources
+    %h3= link_to 'Resources', resources_path, class: 'black'
     .tag_cloud
       - tag_cloud Resource.tag_counts, ['s','m','l'] do |tag, css_class|
         = link_to tag.name, tags_path(tag.name), class: css_class
@@ -15,10 +15,10 @@
     = render 'shared/resource_list', resources: @resources
 
   .span6
-    %h3 Tips & tricks 
+    %h3= link_to 'Tips & tricks', tips_path, class: 'black'
     .tag_cloud
       - tag_cloud Tip.tag_counts, ['s','m','l'] do |tag, css_class|
         = link_to tag.name, tags_path(tag.name), class: css_class
 
     %h4 Recent tips & tricks
-    TBA
+    = render 'shared/tip_list', tips: @tips
