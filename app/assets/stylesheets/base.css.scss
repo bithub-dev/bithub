@@ -15,6 +15,16 @@
 }
 
 #user_bio {
- height: 100px;
+  height: 100px;
+}
 
+.tag_cloud {
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.6em; }
+  .l { font-size: 2.4em; }
+  line-height: 1.5em;
+}
+
+.tag_cloud a {
+  padding: 10px;
 }

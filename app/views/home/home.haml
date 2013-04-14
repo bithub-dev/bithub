@@ -14,3 +14,6 @@
 
   .span4
     %h3 Tags
+    .tag_cloud
+      - tag_cloud Resource.tag_counts, ['s','m','l'] do |tag, css_class|
+        = link_to tag.name, tags_path(tag.name), class: css_class
