@@ -1,17 +1,4 @@
 %h2 Sign Up
 
-%p Please fill out your profile below.
-
-= form_for @user do |f|
-  .span6
-    = render 'shared/form_errors', f: f
-
-    =f.text_field :full_name, :placeholder => "Full name", class: 'input-block-level'
-    =f.text_area :bio, :placeholder => "Your bio. Be brief.", class: 'input-block-level'
-    =f.text_field :github_link, :placeholder => "Github URL", class: 'input-block-level'
-    =f.text_field :twitter_link, :placeholder => "Twitter URL", class: 'input-block-level'
-    =f.text_field :blog_link, :placeholder => "Blog URL", class: 'input-block-level'
-    =f.password_field :password, :placeholder => "Password", class: 'input-block-level'
-    =f.password_field :password_confirmation, :placeholder => "Password (confirm)", class: 'input-block-level'
-    .form-actions
-      =f.submit 'Create account', class: 'btn btn-primary btn-large'
+.well.well-small
+  = render 'fields', user: @user, action: :new

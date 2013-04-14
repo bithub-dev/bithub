@@ -1,19 +1,4 @@
-.well.well-small
-  -# See http://twitter.github.io/bootstrap/base-css.html#forms - specifically the section on Horizontal Forms.
-  -# simple_form_for does a lot of Bootstrap magic here, including the control_group stuff.
-  - form_defaults = { :input_html => { :class => "input-xlarge"} }
-  - form_html = { :class => "form-horizontal" }
+%h2 Edit your profile
 
-  = simple_form_for @user, { :html => form_html, :defaults => form_defaults } do |f|
-    %fieldset
-      %legend Edit Your Information
-      = render 'shared/form_errors', f: f
-      = f.input :email
-      = f.input :bio, :label => "Bio"
-      = f.input :twitter_link, :label => "Twitter Link"
-      = f.input :github_link, :label => "Github Link"
-      = f.input :blog_link, :label => "Personal Site Link"
-      = f.input :password, :label => "Password"
-      = f.input :password_confirmation, :label => "Password Confirmation"
-      .controls
-        = f.button :submit, :class => "btn btn-success"
+.well.well-small
+    = render 'fields', user: @user, action: :edit
