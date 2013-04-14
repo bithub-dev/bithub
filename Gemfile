@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'gravatar_image_tag'
 gem 'font-awesome-rails'
 gem 'acts-as-taggable-on'
+gem 'gmaps4rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

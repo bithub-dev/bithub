@@ -7,6 +7,7 @@ class TipsController < ApplicationController
     if logged_in?
       @tip = current_user.tips.build
     end
+
   end
 
   def create
