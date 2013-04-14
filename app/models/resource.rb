@@ -8,4 +8,6 @@ class Resource < ActiveRecord::Base
   validates :url, :presence => true
   validates :user, :presence => true
 
+  scope :recent, order('created_at DESC').limit(10)
+
 end

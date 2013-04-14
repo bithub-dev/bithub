@@ -4,17 +4,7 @@
   .span6
     %h3 Resources
     %ul
-    - @resources.each do |resource|
-      %li
-        %h4
-          =link_to resource.title, resource.url
-        %p
-          = resource.description
-          %small.muted
-            %em
-              = friendly_date resource.created_at
-              by 
-              = link_to resource.user.full_name, resource.user
+    = render 'shared/resource_list', resources: @resources
 
   .span6
     %h3 Tips & Tricks
