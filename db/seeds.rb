@@ -37,43 +37,53 @@ shane = User.create(
 
 Resource.attr_accessible :user, :created_at
 
+Resource.create(
+  :title => "A practical example of closures in JavaScript",
+  :url => "https://gist.github.com/jbinto/5301893",
+  :description => "Small code sample to demonstrate how closures are useful.",
+  :user => jesse,
+  :tag_list => "javascript, closures"
+)
+Resource.create(
+  :title => "Bootstrap themes",
+  :url => "http://bootswatch.com/",
+  :description => "A collection of Bootstrap themes. Try the bootswatch-rails gem too!",
+  :user => shane,
+  :tag_list => "css, bootstrap"
+)
+Resource.create(
+  :title => "Font Awesome",
+  :url => "http://fortawesome.github.io/Font-Awesome/",
+  :description => "A web font filled with useful icons, better than the Glyphicons provided with Bootstrap. Try the font-awesome rails gem!",
+  :user => jesse,
+  :tag_list => "css, fonts, icons"
+)
 
-1.upto(5) do |day|
+Resource.create(
+  :title => "simple_form",
+  :url => "https://github.com/plataformatec/simple_form",
+  :description => "A gem that improves 'form_for'. It plays nicely with Bootstrap.",
+  :user => shane,
+  :tag_list => "rails, forms"
+)
 
-  Resource.create(
-    :title => "A practical example of closures in JavaScript",
-    :url => "https://gist.github.com/jbinto/5301893",
-    :description => "Small code sample to demonstrate how closures are useful.",
-    :user => jesse,
-    :created_at => DateTime.new(2013, 4, day),
-    :tag_list => "javascript, closures"
-  )
-  Resource.create(
-    :title => "Bootstrap themes",
-    :url => "http://bootswatch.com/",
-    :description => "A collection of Bootstrap themes. Try the bootswatch-rails gem too!",
-    :user => shane,
-    :created_at => DateTime.new(2013, 4, day),
-    :tag_list => "css, bootstrap"
-  )
-  Resource.create(
-    :title => "Font Awesome",
-    :url => "http://fortawesome.github.io/Font-Awesome/",
-    :description => "A web font filled with useful icons, better than the Glyphicons provided with Bootstrap. Try the font-awesome rails gem!",
-    :user => jesse,
-    :created_at => DateTime.new(2013, 4, day),
-    :tag_list => "css, fonts, icons"
-  )
+Resource.create(
+  :title => "Railscast #382: Tagging",
+  :url => "http://railscasts.com/episodes/382-tagging",
+  :description => "This Railscast walks you through implementing tagging using the acts-as-taggable-on gem.",
+  :user => shane,
+  :tag_list => "rails, tagging"
+)
 
-  Resource.create(
-    :title => "simple_form",
-    :url => "https://github.com/plataformatec/simple_form",
-    :description => "A gem that improves 'form_for'. It plays nicely with Bootstrap.",
-    :user => shane,
-    :created_at => DateTime.new(2013, 4, day),
-    :tag_list => "rails, forms"
-  )
+Resource.create(
+  :title => "gmaps4rails",
+  :url => "http://railscasts.com/episodes/382-tagging",
+  :description => "This gem adds geocoding capability to your ActiveRecord models, and the ability to display an embedded Google Map for any address.",
+  :user => shane,
+  :tag_list => "rails, maps, geocoding"
+)
 
+Tip.attr_accessible :user
 
 Tip.create(
   :title => "Burger Bratz",
@@ -98,7 +108,7 @@ Tip.create(
   :url => "http://www.burritoboyz.ca/",
   :address => "218 Adelaide St W, Toronto, ON",
   :user => shane,
-  :tag_list => "food, nearby, burritos"
+  :tag_list => "food, nearby, burritos",
   :description => "The other 'BB'. Shane says it's 'okay'."
 )
 Tip.create(
@@ -106,29 +116,25 @@ Tip.create(
   :url => "http://www.banhmiboys.com/",
   :address => "392 Queen St W, Toronto, ON",
   :user => shane,
-  :tag_list => "food, nearby, banh mi"
+  :tag_list => "food, nearby, banh mi",
   :description => "Vietnamese sandwiches."
 )
 Tip.create(
   :title => "git commit --amend",
   :user => jesse,
-  :tag_list => "git"
+  :tag_list => "git",
   :description => "If you make a mistake in your commit message, you can use `git commit --amend` to change the message."
 )
 Tip.create(
   :title => "render 'form' partial",
   :user => jesse,
-  :tag_list => "rails forms"
+  :tag_list => "rails forms",
   :description => "If you have a partial called 'rabbits/form', Rails will implicitly pass the current form."
 )
 Tip.create(
   :title => "git commit --amend",
   :user => jesse,
-  :tag_list => "git"
+  :tag_list => "git",
   :description => "If you make a mistake in your commit message, you can use `git commit --amend` to change the message."
 )
-
-
-
-end
 
