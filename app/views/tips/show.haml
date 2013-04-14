@@ -2,4 +2,4 @@
 = @tip.title
 = @tip.description
 = @tip.url
-= gmaps("map_options" => {},"markers" => { "data" => @json })
+= gmaps(:map_options => { :minZoom => 17, :maxZoom => 17, :raw => "{disableDefaultUI: true}"}, :markers => { "data" => @json })
