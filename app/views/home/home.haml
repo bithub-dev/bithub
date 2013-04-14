@@ -5,15 +5,20 @@
   %p BitHub was created to improve the experience of Bitmaker Labs students. Here you can find tips and tricks ranging from Ruby, Rails and CSS, to where to find the best burger near 20 Duncan St. 
 
 .row
-  .span4
-    %h3 New resources
-    = render 'shared/resource_list', resources: @resources
-
-  .span4
-    %h3 New tips & tricks
-
-  .span4
-    %h3 Tags
+  .span6
+    %h3 Resources
     .tag_cloud
       - tag_cloud Resource.tag_counts, ['s','m','l'] do |tag, css_class|
         = link_to tag.name, tags_path(tag.name), class: css_class
+
+    %h4 Recent resources
+    = render 'shared/resource_list', resources: @resources
+
+  .span6
+    %h3 Tips & tricks 
+    .tag_cloud
+      - tag_cloud Tip.tag_counts, ['s','m','l'] do |tag, css_class|
+        = link_to tag.name, tags_path(tag.name), class: css_class
+
+    %h4 Recent tips & tricks
+    TBA
