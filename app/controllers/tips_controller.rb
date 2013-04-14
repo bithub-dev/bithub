@@ -35,4 +35,9 @@ class TipsController < ApplicationController
     @tips = Tip.order('created_at DESC')
   end
 
+  def show
+    @tip = current_user.tips.find(params[:id])
+    @json = @tip.to_gmaps4rails
+  end
+
 end

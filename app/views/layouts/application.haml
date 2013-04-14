@@ -13,3 +13,5 @@
       - if flash[:alert]
         .alert.alert-error= flash[:alert]
       = yield
+  %footer
+    = yield :scripts
