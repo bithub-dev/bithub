@@ -91,7 +91,7 @@ Resource.create(
 
 Resource.create(
   :title => "simple_form",
-  :url => "https://github.com/plataformatec/simple_form",
+  :url => "https://github.cgiom/plataformatec/simple_form",
   :description => "A gem that improves 'form_for'. It plays nicely with Bootstrap.",
   :user => shane,
   :tag_list => "rails, forms"
@@ -111,6 +111,14 @@ Resource.create(
   :description => "This gem adds geocoding capability to your ActiveRecord models, and the ability to display an embedded Google Map for any address.",
   :user => shane,
   :tag_list => "rails, maps, geocoding"
+)
+
+Resource.create(
+  :title => "Git from the bottom up",
+  :url => "http://ftp.newartisans.com/pub/git.from.bottom.up.pdf",
+  :description => "A view of Git's internals. Very enlightening.",
+  :user => jesse,
+  :tag_list => "git"
 )
 
 Tip.attr_accessible :user
