@@ -1,0 +1,15 @@
+-# See http://twitter.github.io/bootstrap/base-css.html#forms - specifically the section on Horizontal Forms.
+-# simple_form_for does a lot of Bootstrap magic here, including the control_group stuff.
+- form_defaults = { :input_html => { :class => "input-xlarge"} }
+- form_html = { :class => "form-horizontal" }
+
+= simple_form_for @tip, { :html => form_html, :defaults => form_defaults } do |f|
+  %fieldset
+    %legend= legend
+    = render 'shared/form_errors', f: f
+    = f.input :title,  :placeholder => "Burger Brats!"
+    = f.input :url, :label => "URL", :placeholder => "http://example.org/abc/123"
+    = f.input :address, :label => "Address", :placeholder => ""
+    = f.input :description, :placeholder => "The best burger join this side of the Panama canal"
+    .controls
+      = f.button :submit, :class => "btn btn-success"

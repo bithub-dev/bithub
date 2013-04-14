@@ -1,3 +1,26 @@
 %h1.well 
   %i.icon-lightbulb
   Tips & Tricks
+  - if logged_in?
+    .pull-right
+      = link_to '#', class: "btn btn-info btn-add-item" do
+        %i.icon-plus-sign
+        Add tip
+
+- if logged_in?
+  .well.well-small.new_form
+    = render 'fields', resource: @tips, legend: "Add a new tip"
+
+.tips
+  - @tips.each do |tip|
+    .tip
+      .span8
+        %h3
+          = link_to tip.title, tip.url
+          - if current_user && current_user == tip.user
+            = link_to 'Edit', [:edit, tip], class: 'btn btn-small pull-right'
+        %p= tip.address
+        %p= tip.description
+        %em= "Posted #{friendly_date(tip.created_at)} by "
+        = link_to tip.user.full_name, tip.user, class: 'text-info'
+
