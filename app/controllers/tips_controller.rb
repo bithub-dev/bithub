@@ -23,7 +23,7 @@ class TipsController < ApplicationController
   end
 
   def update
-    @tip = current_user.tips.build(params[:tip])
+    @tip = current_user.tips.find(params[:tip])
     if @tip.save
       redirect_to tips_path, :notice => "Your changes have been saved."
     else
@@ -36,7 +36,7 @@ class TipsController < ApplicationController
   end
 
   def show
-    @tip = current_user.tips.find(params[:id])
+    @tip = Tip.find(params[:id])
     @json = @tip.to_gmaps4rails
   end
 
